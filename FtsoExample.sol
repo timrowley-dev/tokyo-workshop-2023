@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+// Demo: Compile & Deploy
+
 pragma solidity ^0.8.6;
 
 import { IFtso } from "@flarenetwork/flare-periphery-contracts/coston2/ftso/userInterfaces/IFtso.sol";

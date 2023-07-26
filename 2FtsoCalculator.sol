@@ -3,6 +3,8 @@
 // Collects USD prices from FTSO to calculate price of an asset (ie, XRP) 
 // and contains function to calculate how token for token exchnage rate
 
+// Learn about imports from perihpery package
+
 pragma solidity ^0.8.6;
 
 import {IFtso} from "@flarenetwork/flare-periphery-contracts/coston2/ftso/userInterfaces/IFtso.sol";

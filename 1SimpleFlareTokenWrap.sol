@@ -2,6 +2,8 @@
 
 // Basic ERC20 contract that will mint token at 1:1 ratio (ie. deposit 100 native tokens, get 100 ERC20 tokens)
 
+// Demo: Learn about state variables, mappings (similar to dictonaries) & write transfer function
+
 pragma solidity ^0.8.6;
 
 import {IERC20Metadata} from "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
@@ -11,10 +13,12 @@ error OnylOwner();
 error SupplyCeiling();
 
 contract SimpleFlareTokenWrap is IERC20Metadata {
+    // Declare state variables and manage accessibility 
     string public override name;
     string public override symbol;
     uint8 public override decimals;
 
+    // Mapping is similar to a dictionary (key/value store)
     mapping(address => uint256) private _balances;
     mapping(address => mapping(address => uint256)) private _allowances;
 
@@ -56,7 +60,7 @@ contract SimpleFlareTokenWrap is IERC20Metadata {
         override
         returns (bool)
     {
-        // TODO
+        // TODO: add check for suffcient balance, update balances and emit transfer event
         if (amount > _balances[msg.sender]) {
             revert InsufficientBalance(_balances[msg.sender], amount);
         }

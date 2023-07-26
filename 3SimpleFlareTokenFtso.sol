@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 
-// Basic ERC20 contract that mints tokens using price/ratio retrieved from FTSO with a
+// Basic ERC20 contract that mints tokens using the price retrieved from FTSO with a
 // supplied foreign token and the native token (ie. division of XRP to USD and FLR to USD)
+
+
 
 pragma solidity ^0.8.6;
 
@@ -14,7 +16,7 @@ error InsufficientBalance(uint256 available, uint256 required);
 error OnylOwner();
 error SupplyCeiling();
 
-contract DynamicToken is IERC20Metadata {
+contract SimpleFlareTokenFtso is IERC20Metadata {
     string public override name;
     string public override symbol;
     uint8 public override decimals;
